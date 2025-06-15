@@ -227,4 +227,25 @@
                 );
               } else {
                 alert(
-                  `
+                  `Onverwachte fout bij het verwerken van het bestand: ${err.message}`
+                );
+              }
+              console.error("File Read Error:", err);
+            }
+          }
+        } catch (error) {
+          alert(`Er is een fout opgetreden: ${error.message}`);
+          console.error("General Error:", error);
+        }
+      }
+
+      function changeButtonColorOnFileSelected() {
+        if (fileInput.files.length > 0) {
+          buttonLoadManual.classList.remove("loadButton");
+        } else {
+          buttonLoadManual.classList.add("loadButton");
+        }
+      }
+    </script>
+  </body>
+</html>
